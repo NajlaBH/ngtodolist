@@ -7,6 +7,7 @@
 	   [(ngModel)]="inputTask" 
 	   placeholder="Please add your task here."
 	   (keydown)="onKeydown($event)"/>
+	   <p *ngIf=" userIsTyping " >is typing ....</p>
 	   &emsp;
 	   <p style="width:200px;"></p>
 	   <button type="button" class="btn btn-primary" (click)="addToTaskList()" >ADD</button>

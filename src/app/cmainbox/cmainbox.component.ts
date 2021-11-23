@@ -17,6 +17,8 @@ export class CmainboxComponent implements OnInit {
   //Get the task index
   idx:number=0;
 
+  //check user typing
+  userIsTyping = false;
 
 
   constructor() { }
@@ -35,6 +37,7 @@ export class CmainboxComponent implements OnInit {
 
   //Add task to the list
   addToTaskList(){
+    this.userIsTyping=false;
     //console.log('it does nothing',this.inputTask);
     if(this.inputTask != "Please add your task here." && this.inputTask != ""){
 	    this.spliceIt('No tasks yet :)',this.taskList);
@@ -58,6 +61,8 @@ export class CmainboxComponent implements OnInit {
     if (event.key === "Enter"){
       //alert("Enter is pressed");
       this.addToTaskList();
+    }else{
+      this.userIsTyping = true;
     }
   }
 }
