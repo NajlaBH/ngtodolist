@@ -11,5 +11,6 @@ export class CheaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  today = new Date();
+  cheadertime = this.today.getHours() + ":"+ this.today.getMinutes();
 }

@@ -1,0 +1,11 @@
+.cmainbox{
+ border: thick double #32a1ce;
+ top: 20px;
+ bottom: 20px;
+ left: 20px;
+ right: 20px;
+ padding: 20px;
+ height: 90%;
+}
+
+

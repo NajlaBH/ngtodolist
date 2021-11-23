@@ -1,1 +1,19 @@
-<p>cmainbox works!</p>
+<div class="cmainbox">
+	<div>
+	   <label><strong> Add Task</strong> </label><br>
+	   <input style="width:400px;" type="text" id="inputTask" [(ngModel)]="inputTask" placeholder="Please add your task here."/>
+	   &emsp;
+	   <p style="width:200px;"></p>
+	   <button type="button" class="btn btn-primary" (click)="addToTaskList()" >ADD</button>
+	</div>
+	<hr>
+	<div>
+	    <label><strong>Tasks</strong></label>
+	    <ul class="list-group">
+  		<li class="list-group-item" *ngFor="let task of taskList" >
+			<p style="padding-right:60px;">{{ task  }}
+			<button style="align:right;" type="button" class="btn btn-outline-danger">X</button></p>
+		</li>
+	     </ul>
+	</div>
+</div>
