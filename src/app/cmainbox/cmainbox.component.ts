@@ -53,4 +53,11 @@ export class CmainboxComponent implements OnInit {
         this.taskList.splice(indx, 1);
   }
 
+  //Entry key event
+  onKeydown(event:any) {
+    if (event.key === "Enter"){
+      //alert("Enter is pressed");
+      this.addToTaskList();
+    }
+  }
 }
