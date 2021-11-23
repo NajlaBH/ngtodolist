@@ -15,7 +15,7 @@ export class CmainboxComponent implements OnInit {
   //Get the task list
   taskList:string[]=['No tasks yet :)'];
   //Get the task index
-  //idx:number=1;
+  idx:number=0;
 
 
 
@@ -49,8 +49,8 @@ export class CmainboxComponent implements OnInit {
   }
 
   //Delete task
-  //deleteTask(index:number) {
-  //      this.taskList.splice(index, 1);
-  //  }
+  deleteTask(indx:number) {
+        this.taskList.splice(indx, 1);
+  }
 
 }
