@@ -10,9 +10,11 @@
 	<div>
 	    <label><strong>Tasks</strong></label>
 	    <ul class="list-group">
-  		<li class="list-group-item" *ngFor="let task of taskList" >
-			<p style="padding-right:60px;">{{ task  }}
-			<button style="align:right;" type="button" class="btn btn-outline-danger">X</button></p>
+  		<!--li class="list-group-item" *ngFor="let task of taskList"; let idx = index; -->
+		<li class="list-group-item" *ngFor="let task of taskList" >
+			<p style="padding-right:60px;"> {{ task  }}
+			<!--button style="align:right;" type="button" class="btn btn-outline-danger" (click)="deleteTask(idx)">X</button-->
+			</p>
 		</li>
 	     </ul>
 	</div>
