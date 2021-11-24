@@ -23,12 +23,20 @@ export class CmainboxComponent implements OnInit {
   //add clear all button
   isShown: boolean = false ;
 
+  //task number
+  taskid:number=0;
+
+  //tasks sum up
+  taskSum:number=0;
+
   constructor() { }
 
   ngOnInit(): void {
-   this.isShown = false; 
+   this.isShown = false;
+   this.taskid=0; 
   }
 
+  //Able/disable button clear all
   toggleShow() {
   	this.isShown = ! this.isShown;
   }
@@ -46,9 +54,16 @@ export class CmainboxComponent implements OnInit {
     this.userIsTyping=false;
     //console.log('it does nothing',this.inputTask);
     if(this.inputTask != "Please add your task here." && this.inputTask != ""){
+	    //tasklist
 	    this.spliceIt('No tasks yet :)',this.taskList);
 	    this.taskList.push(this.inputTask);
+	    //clearall btn
 	    this.isShown=true;
+	    //taskid
+	    this.taskid=this.taskid+1;
+	    console.log(this.taskid);
+	    //tasksum
+	    this.taskSum=this.taskList.length;
     }else if (this.inputTask == ""){
 	    alert("Please add your task in the empty field.")
     }else if (this.taskList.length >2){
@@ -56,6 +71,8 @@ export class CmainboxComponent implements OnInit {
     }else{
 	    if(this.taskList=[]){
 		    this.taskList=['No tasks yet :)'];
+		    this.taskid=0;
+		    this.taskSum=0;
 	    }
     }
   }
@@ -78,5 +95,7 @@ export class CmainboxComponent implements OnInit {
   //Delete all tasks
   clearAll(){
      this.taskList=[];
+     this.taskid=0;
+     this.taskSum=0;
   }
 }

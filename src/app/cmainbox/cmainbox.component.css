@@ -8,4 +8,11 @@
  height: 90%;
 }
 
-
+.emptylist{
+ color:red;
+ float:right;
+}
+.fullist{
+ color:green;
+ float:right;
+}

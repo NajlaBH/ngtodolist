@@ -1,9 +1,11 @@
 .cfooter{
-   position: fixed;
+   /*position: fixed;*/
+   position: relative;
    left: 0;
    bottom: 0;
    width: 100%;
    background-color: #ADD8E6;
    color: white;
    text-align: center;
+   margin-top: 30px;
 }

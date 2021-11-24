@@ -14,12 +14,15 @@
 	</div>
 	<hr>
 	<div>
+	    <label [ngClass]=" ( taskSum < 1) ? 'fullist' : 'emptylist'   ">You have : {{ taskSum }} tasks.</label>
+	    <br>
+	    <hr>
 	    <label><strong>Tasks</strong></label>
 	    <ul class="list-group">
-  		<li class="list-group-item" *ngFor="let task of taskList" let idx = index>
-		<!--li class="list-group-item" *ngFor="let task of taskList"-->
-			<p style="padding-right:60px;"> {{ task  }}
-			<button style="align:right;" type="button" class="btn btn-outline-danger" (click)="deleteTask(idx)">X</button>
+  		<li class="list-group-item" *ngFor="let task of taskList" let idx = index >
+			<!--p style="padding-right:60px;"> [Task {{ taskid }} ] :</p-->
+			<p style="padding-right:80px;"> {{ task  }}
+			<button style="text-align:right;" type="button" class="btn btn-outline-danger" (click)="deleteTask(idx)">X</button>
 			</p>
 		</li>
 	     </ul>
