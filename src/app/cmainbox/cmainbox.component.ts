@@ -20,13 +20,19 @@ export class CmainboxComponent implements OnInit {
   //check user typing
   userIsTyping = false;
 
+  //add clear all button
+  isShown: boolean = false ;
 
   constructor() { }
 
   ngOnInit(): void {
+   this.isShown = false; 
   }
 
-  
+  toggleShow() {
+  	this.isShown = ! this.isShown;
+  }
+
   //Delete no tasks yet ...
   spliceIt(element: string,stringArray:string[]){
     stringArray.forEach((value,index)=>{
@@ -42,8 +48,11 @@ export class CmainboxComponent implements OnInit {
     if(this.inputTask != "Please add your task here." && this.inputTask != ""){
 	    this.spliceIt('No tasks yet :)',this.taskList);
 	    this.taskList.push(this.inputTask);
+	    this.isShown=true;
     }else if (this.inputTask == ""){
 	    alert("Please add your task in the empty field.")
+    }else if (this.taskList.length >2){
+	    this.isShown=true;
     }else{
 	    if(this.taskList=[]){
 		    this.taskList=['No tasks yet :)'];
@@ -64,5 +73,10 @@ export class CmainboxComponent implements OnInit {
     }else{
       this.userIsTyping = true;
     }
+  }
+
+  //Delete all tasks
+  clearAll(){
+     this.taskList=[];
   }
 }
