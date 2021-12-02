@@ -32,8 +32,7 @@ export class CmainboxComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-   this.isShown = false;
-   this.taskid=0; 
+   this.isShown = false; 
   }
 
   //Able/disable button clear all
@@ -59,9 +58,6 @@ export class CmainboxComponent implements OnInit {
 	    this.taskList.push(this.inputTask);
 	    //clearall btn
 	    this.isShown=true;
-	    //taskid
-	    this.taskid=this.taskid+1;
-	    console.log(this.taskid);
 	    //tasksum
 	    this.taskSum=this.taskList.length;
     }else if (this.inputTask == ""){
@@ -71,15 +67,17 @@ export class CmainboxComponent implements OnInit {
     }else{
 	    if(this.taskList=[]){
 		    this.taskList=['No tasks yet :)'];
-		    this.taskid=0;
 		    this.taskSum=0;
 	    }
     }
   }
 
   //Delete task
-  deleteTask(indx:number) {
-        this.taskList.splice(indx, 1);
+  deleteTask(e:string,indx:number) {
+	this.taskList.forEach((element,index)=>{
+        if(element==e) this.taskList.splice(index,1);
+        });
+        this.taskSum=this.taskSum - 1;
   }
 
   //Entry key event
